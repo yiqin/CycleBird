@@ -13,7 +13,6 @@ extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
         
         let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks")
-        
         let sceneData = NSData.dataWithContentsOfFile(path, options: .DataReadingMappedIfSafe, error: nil)
         let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
         
@@ -31,8 +30,9 @@ class GameViewController: UIViewController {
         
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
-            // let skView = self.view as SKView
-            
+            // let skView = self.view as SKView.
+            // when the view is SKView.
+
             let skView = SKView(frame: self.view.frame)
             self.view.addSubview(skView)
 
